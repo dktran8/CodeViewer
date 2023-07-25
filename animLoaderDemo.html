@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<!-- saved from url=(0269)https://webview.cfisd.net/144064/webview/reliable/_group/resources/html/animLoader.html?anim=FlexTile-Accordion-V02/FlexTile-Accordion-V02.js&path=https://webview.cfisd.net/bas/29/job/pic/Animation/&gelIndex=508&alarmApiPath=https://webview.cfisd.net/bas/Alarms/Current -->
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Html Image Animation</title>
+    <script
+        src="file://C:/Users/TimothyBaker/tinymce/js/tinymce/tinymce.min.js"
+        referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+            selector: '.acc-content-wrapper',
+            inline: true,
+            skin: 'tinymce-5-dark',
+            browser_spellcheck: true,
+            plugins: 'table code lists image',
+            toolbar: 'undo redo styles fontfamily fontsize bold italic alignleft aligncenter alignright outdent indent code table numlist bullist image',
+            fontsize_formats: "8pt 10pt 12pt 14pt 18pt 24pt 36pt",
+            formats: {
+                valuer: { inline: 'span', classes: 'value' },
+                valuew: { inline: 'span', classes: 'value editable' },
+            },
+            style_formats: [
+                { title: 'Read-Only Value', format: 'valuer' },
+                { title: 'Editable Value', format: 'valuew' },
+            ],
+            style_formats_merge: true,
+            text_patterns: [
+                { start: '{R', end: '}', format: 'valuer' },
+                { start: '{', end: '}', format: 'valuew' },
+            ],
+        });
+    </script>
+
+    <style type="text/css">
+        body {
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    </style>
+    <script type="text/javascript">
+        function queryToObject(/*String*/ str) {
+            // summary:
+            //		Create an object representing a de-serialized query section of a
+            //		URL. Query keys with multiple values are returned in an array.
+            //
+            // example:
+            //		This string:
+            //
+            //	|		"foo=bar&foo=baz&thinger=%20spaces%20=blah&zonk=blarg&"
+            //
+            //		results in this object structure:
+            //
+            //	|		{
+            //	|			foo: [ "bar", "baz" ],
+            //	|			thinger: " spaces =blah",
+            //	|			zonk: "blarg"
+            //	|		}
+            //
+            //		Note that spaces and other urlencoded entities are correctly
+            //		handled.
+
+            // FIXME: should we grab the URL string if we're not passed one?
+            var dec = decodeURIComponent, qp = str.split("&"), ret = {}, name, val;
+            for (var i = 0, l = qp.length, item; i < l; ++i) {
+                item = qp[i];
+                if (item.length) {
+                    var s = item.indexOf("=");
+                    if (s < 0) {
+                        name = dec(item);
+                        val = "";
+                    } else {
+                        name = dec(item.slice(0, s));
+                        val = dec(item.slice(s + 1));
+                    }
+                    if (typeof ret[name] == "string") { // inline'd type check
+                        ret[name] = [ret[name]];
+                    }
+
+                    if (ret[name] instanceof Array) {
+                        ret[name].push(val);
+                    } else {
+                        ret[name] = val;
+                    }
+                }
+            }
+            return ret; // Object
+        }
+    </script>
+    <script type="text/javascript" src="./locale.js.download"></script>
+    <script type="text/javascript">
+        var aniPath = queryToObject(window.location.search).path;
+        var baseUrl = "../../../../../dojo";
+        var locale = getLocale();
+        var dojoConfig = {
+            locale: locale,
+            extraLocale: ["en-us"],
+            async: 1,
+            tlmSiblingOfDojo: 0,
+            isDebug: 1,
+            baseUrl: baseUrl,
+
+            "packages": [
+                { name: "dojo", location: "dojo" },
+                { name: "dijit", location: "dijit" },
+                { name: "anim", location: aniPath + "" }
+            ]
+        };
+    </script>
+    <script type="text/javascript" charset="utf-8" src="./dojo_en-us.js.download"></script>
+    <script type="text/javascript" charset="utf-8" src="./FlexTile-Accordion-V02.js.download"></script>
+    <script src="./dojo.js.download"></script>
+    <script type="text/javascript" src="./main.js.download"></script>
+
+
+</head>
+
+<body class="claro">
+    <div style="width: 1590px; height: 762px; transform-origin: 0px 0px; transform: scale(1, 1);" id="uniqName_0_0"
+        widgetid="uniqName_0_0">
+        <div data-dojo-attach-point="containerNode" id="container">
+            <div data-dojo-attach-point="accordion" id="accordion">
+                <div class="acc-item" id="accitem-1" data-dojo-attach-point="accitem-1">
+                    <div class="label" id="lab-1">Segment Topics</div>
+                    <div class="acc-content-wrapper" id="ac-1">
+                        <ol>
+                            <li style="font-size: 24pt;"><span style="font-size: 24pt;">Flex Tile Animations</span>
+                                <ul>
+                                    <li style="font-size: 24pt;"><span style="font-size: 24pt;">Demo</span></li>
+                                    <li style="font-size: 24pt;"><span style="font-size: 24pt;">Flex Tile Editor</span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li style="font-size: 24pt;"><span style="font-size: 24pt;">Advanced Programming
+                                    Topics</span>
+                                <ul>
+                                    <li style="font-size: 24pt;"><span style="font-size: 24pt;">Templates</span></li>
+                                    <li style="font-size: 24pt;"><span style="font-size: 24pt;">Array Mapping</span>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="acc-item" id="accitem-2" data-dojo-attach-point="accitem-2">
+                    <div class="label" id="lab-2">What Are Flex Tile Animations?</div>
+                    <div class="acc-content-wrapper" id="ac-2">
+                        <p><span style="font-size: 24pt;">GrafxSet</span></p><br><img
+                            src="https://i.imgur.com/ABiF6nd.png">
+                    </div>
+                </div>
+                <div class="acc-item" id="accitem-3" data-dojo-attach-point="accitem-3">
+                    <div class="label" id="lab-3">Fan Control</div>
+                    <div class="acc-content-wrapper" id="ac-3">
+                        <p>When the unit is enabled to run, the fan will be commanded to start, running continuously,
+                            modulating its speed to maintain the duct static pressure setpoint <span
+                                class="value ">1.00</span> WC.</p>
+                        <p>The unit will monitor the associated terminal unit damper positions and look at the damper in
+                            position <span class="value editable " id="c29">1</span> when sorted from most to least
+                            open. Current Reading: <span class="value ">0.0</span> %</p>
+                        <p>The static pressure will be reset in increments of <span class="value editable "
+                                id="c31">0.20</span> WC every <span class="value editable " id="c32">00:04:00</span> to
+                            achieve a damper position of <span class="value editable " id="c33">90.0</span> % with a
+                            deadband of <span class="value editable " id="c34">5.0</span> %.</p>
+                        <p> The static pressure minimum will be set at <span class="value editable "
+                                id="c35">0.50</span> WC, the maximum at <span class="value editable "
+                                id="c36">1.95</span> WC and initial at <span class="value editable "
+                                id="c37">1.00</span> WC. Current Reset Status: <span class="value ">OptimumSP</span></p>
+                        <br><br>
+                        <table style="width:50%; display: inline-table;">
+                            <tbody>
+                                <tr>
+                                    <td colspan="9">
+                                        <div
+                                            style="border-top:1px solid;border-right:1px solid;border-left:1px solid;font-size:17px;text-align:center;">
+                                            Fan Speed PID</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:right">Input:</td>
+                                    <td><span class="value ">0.00</span></td>
+                                    <td style="text-align:right">Setpoint:</td>
+                                    <td><span class="value ">1.00</span></td>
+                                    <td style="text-align:right">Deadband:</td>
+                                    <td><span class="value editable " id="c41">0.10</span></td>
+                                    <td style="text-align:right">Action:</td>
+                                    <td><span class="value editable " id="c42">1</span></td>
+                                    <td>0 = direct 1 = reverse</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:right">P:</td>
+                                    <td colspan="8"><span class="value editable " id="c43">2.00</span></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:right">I:</td>
+                                    <td><span class="value editable " id="c44">10.00</span></td>
+                                    <td colspan="4">
+                                        <div style="text-align:right">Time Interval to add 'I' correction:</div>
+                                    </td>
+                                    <td><span class="value editable " id="c45">72</span></td>
+                                    <td colspan="2">71 = hour 72 = minute</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:right">D:</td>
+                                    <td><span class="value editable " id="c46">0.00</span></td>
+                                    <td colspan="4">
+                                        <div style="text-align:right">Bias:</div>
+                                    </td>
+                                    <td colspan="3"><span class="value editable " id="c47">30.00</span></td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:right">Output:</td>
+                                    <td colspan="8"><span class="value ">100.0</span></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="9">
+                                        <div
+                                            style="border-bottom:1px solid;border-right:1px solid;border-left:1px solid;font-size:17px;text-align:center;">
+                                            &nbsp;</div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="acc-item" id="accitem-4" data-dojo-attach-point="accitem-4">
+                    <div class="label" id="lab-4">Our Old Settings</div>
+                    <div class="acc-content-wrapper" id="ac-4"><img src="https://i.imgur.com/k7OSsF2.png"></div>
+                </div>
+                <div class="acc-item" id="accitem-5" data-dojo-attach-point="accitem-5">
+                    <div class="label" id="lab-5">How is it made?</div>
+                    <div class="acc-content-wrapper" id="ac-5">
+                        <p><span style="font-size: 24pt;">By the power of &lt;HTML&gt;,&nbsp;<span
+                                    style="color: rgb(224, 62, 45);"><em>CSS</em></span>, and (optionally)
+                                JavaScript</span></p>
+                        <p>&nbsp;</p>
+                        <p><span style="font-size: 18pt;">HTML+CSS: &lt;p style="color: rgb(224, 62, 45);"&gt;This is a
+                                paragraph&lt;/p&gt;</span></p>
+                        <p>&nbsp;</p>
+                        <p><span style="font-size: 18pt;">Result:</span></p>
+                        <p><span style="font-size: 18pt;"><span style="color: rgb(224, 62, 45);">This is a
+                                    paragraph</span></span></p>
+                        <p>&nbsp;</p>
+                        <p>&nbsp;</p>
+                        <p><span style="font-size: 18pt;">Adding Objects:</span></p>
+                        <p><span style="font-size: 18pt;">Editable Objects: {#} -&gt; <span class="value editable "
+                                    id="c1">On</span></span></p>
+                        <p><span style="font-size: 18pt;">Read-Only Objects: {R#} - &gt; <span
+                                    class="value ">On</span></span></p>
+                        <p>&nbsp;</p>
+                        <p>&nbsp;</p>
+                        <p><span style="font-size: 18pt;">What about JavaScript?</span></p>
+                        <p><span style="font-size: 18pt;">JavaScript can interact with your elements</span></p>
+                        <p id="demo_1" style="font-size:24pt"
+                            onclick="document.getElementById('demo_1').innerHTML = 'YOU CLICKED ME!!!!';">Click me
+                            please</p>
+                        <div onmouseover="this.innerHTML = 'Thank You';this.style.backgroundColor ='rgb(224, 62, 45)';"
+                            onmouseout="this.innerHTML = 'Mouse Over Me';this.style.backgroundColor ='#D94A38';"
+                            style="background-color:#D94A38;width:240px;height:40px;padding:40px;text-align:center;">
+                            Mouse Over Me</div>
+                    </div>
+                </div>
+                <div class="acc-item" id="accitem-6" data-dojo-attach-point="accitem-6">
+                    <div class="label" id="lab-6">Embedded Website</div>
+                    <div class="acc-content-wrapper" id="ac-6"><iframe src="https://reliablecontrols.com/" width="100%"
+                            height="800"></iframe></div>
+                </div>
+                <div class="acc-item" id="accitem-7" data-dojo-attach-point="accitem-7">
+                    <div class="label" id="lab-7">Helpful Video</div>
+                    <div class="acc-content-wrapper" id="ac-7">
+                        <p><span style="font-size: 32px;">I thought this might help you, you should definitely click
+                                it</span></p>
+                        <p><span style="font-size: 32px; color: rgb(224, 62, 45);">❤</span></p><iframe width="560"
+                            height="315" src="https://www.youtube.com/embed/J9yDEpEiP4M" title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen=""></iframe>
+                    </div>
+                </div>
+                <div class="acc-item" id="accitem-8" data-dojo-attach-point="accitem-8">
+                    <div class="label opened" id="lab-8">Hurdles?</div>
+                    <div class="acc-content-wrapper open" id="ac-8">
+                        <p style="text-align: left;"><span class="value editable"
+                                style="text-decoration: underline;"><span style="font-size: 24pt;">Difficulties to
+                                    overcome:</span></span></p>
+                        <ol>
+                            <li style="font-size: 24pt; text-align: left;"><span class="value"
+                                    style="font-size: 24pt;">High entry level</span>
+                                <ul>
+                                    <li style="font-size: 24pt;"><span style="font-size: 24pt;">HTML</span></li>
+                                    <li style="font-size: 24pt;"><span style="font-size: 24pt;">CSS</span></li>
+                                    <li style="font-size: 24pt;"><span style="font-size: 24pt;">JSON</span></li>
+                                    <li style="font-size: 24pt;"><span style="font-size: 24pt;">JavaScript</span></li>
+                                </ul>
+                            </li>
+                            <li style="font-size: 24pt; text-align: left;"><span class="value"
+                                    style="font-size: 24pt;">Errors</span></li>
+                            <li style="font-size: 24pt; text-align: left;"><span class="value"
+                                    style="font-size: 24pt;">Linking objects</span></li>
+                            <li style="font-size: 24pt; text-align: left;"><span class="value"
+                                    style="font-size: 24pt;">Can't see it while editing</span></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="errorDisplay"></div>
+        <div id="stylearea">
+            <div>
+                <style>
+                    * {
+                        box-sizing: border-box;
+                    }
+
+                    #container,
+                    #accordion {
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                    #errorDisplay {
+                        font-family: sans-serif;
+                        font-size: 12px;
+                        text-align: center;
+                        position: absolute;
+                        width: 100%;
+                        bottom: 2px;
+                        left: 0;
+                        z-index: 50;
+                    }
+
+                    #accordion {
+                        background: #15232e;
+                        overflow: hidden;
+                        font-family: Calibri;
+                        overflow: auto;
+                    }
+
+                    .acc-item {
+                        position: relative;
+                        margin: 14px 0 0;
+                        padding: 0;
+                        cursor: default;
+                    }
+
+                    .acc-item:first-child {
+                        margin-top: 0;
+                    }
+
+                    .acc-content-wrapper {
+                        height: 0;
+                        max-height: 0;
+                        overflow-y: hidden;
+                        -webkit-transition: max-height 1s ease-in-out;
+                        -moz-transition: max-height 1s ease-in-out;
+                        -o-transition: max-height 1s ease-in-out;
+                        transition: max-height 1s ease-in-out;
+                        background: #15232e;
+                        color: #b7b8bb;
+                        font-size: 14px;
+                        line-height: 1.2;
+                    }
+
+                    .label {
+                        display: block;
+                        cursor: pointer;
+                        font-size: 16px;
+                        padding: 8px 16px;
+                        position: relative;
+                        border-radius: 0px;
+                        background: #2f3a45;
+                        color: #ffffff;
+                        transition: all 0.3s;
+                        -webkit-user-select: none;
+                        -moz-user-select: none;
+                        -ms-user-select: none;
+                        user-select: none;
+                    }
+
+                    .label:hover {
+                        background: #455360;
+                    }
+
+                    .label:after {
+                        content: '+';
+                        position: absolute;
+                        right: 16px;
+                        display: block;
+                        top: 50%;
+                        -webkit-transform: translateY(-50%);
+                        -moz-transform: translateY(-50%);
+                        -ms-transform: translateY(-50%);
+                        transform: translateY(-50%);
+                        color: #929394;
+                        font-size: 32px;
+                        font-weight: 700;
+                    }
+
+                    .label.opened:after {
+                        content: '–';
+                    }
+
+                    .open {
+                        height: auto;
+                        max-height: 2000px;
+                        padding: 16px 16px 16px !important;
+                    }
+
+                    ::-webkit-scrollbar {
+                        width: 12px;
+                    }
+
+                    ::-webkit-scrollbar-track {
+                        background: #0d171e;
+                        border-radius: 10px;
+                    }
+
+                    ::-webkit-scrollbar-thumb {
+                        background: #929394;
+                        border-radius: 10px;
+                    }
+
+                    ::-webkit-scrollbar-thumb:hover {
+                        background: #b0b1b2;
+                    }
+
+                    .col-1,
+                    .col-2,
+                    .col-3,
+                    .col-4,
+                    .col-5,
+                    .col-6 {
+                        padding: 4px 8px 16px;
+                    }
+
+                    .col-0 {
+                        width: 100%;
+                        float: none;
+                        clear: both;
+                        overflow: auto;
+                    }
+
+                    .col-1 {
+                        width: 100%;
+                        float: none;
+                        clear: both;
+                    }
+
+                    .col-2 {
+                        width: 50%;
+                        float: left;
+                    }
+
+                    .col-3 {
+                        width: 33.3%;
+                        float: left;
+                    }
+
+                    .col-4 {
+                        width: 25%;
+                        float: left;
+                    }
+
+                    .col-5 {
+                        width: 20%;
+                        float: left;
+                    }
+
+                    .col-6 {
+                        width: 16.6%;
+                        float: left;
+                    }
+
+                    div[class^='col-'].right {
+                        text-align: right;
+                    }
+
+                    div[class^='col-'].center {
+                        text-align: center;
+                    }
+
+                    .value {
+                        color: #ffe17b;
+                        white-space: nowrap;
+                        font-weight: 900;
+                        text-transform: uppercase;
+                    }
+
+                    .value.editable {
+                        cursor: pointer;
+                        padding: 0 0.25em;
+                        background: #000000;
+                        margin: 2px 0;
+                        display: inline-block;
+                        border: 1px solid #ffffff;
+                    }
+
+                    .value.manual {
+                        color: #f9851d !important;
+                    }
+
+                    .textlink-holder {
+                        cursor: pointer;
+                        color: #b7b8bb;
+                        transition: all 0.3s;
+                    }
+
+                    .textlink-holder:hover {
+                        color: #ffffff;
+                    }
+
+                    .underlined {
+                        text-decoration: underline;
+                    }
+                </style>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    var acc = document.getElementsByClassName("acc-item");
+    var lab = document.getElementsByClassName("label");
+    var cw = document.getElementsByClassName("acc-content-wrapper");
+    var i;
+
+    console.log(lab);
+
+    for (i = 0; i < lab.length; i++) {
+        lab[i].addEventListener("click", function () { console.log(this.parentElement.children[0].classList.toggle("opened")); console.log(this.parentElement.children[1].classList.toggle("open")); });
+    }
+</script>
+
+</html>
